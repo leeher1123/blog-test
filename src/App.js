@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import styled from "styled-components";
+import {GlobalStyle} from "./style/GlobalStyle";
+import Header from "./views/shared/components/Header";
+import {Switch, Route} from 'react-router-dom';
+import Home from "./pages/Blog/Home";
+import Write from "./pages/Blog/Write";
+import Detail from "./pages/Blog/Detail";
+import Edit from "./pages/Blog/Edit";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Container>
+      <GlobalStyle/>
+      <Header/>
+      <Switch>
+        <Route exact path="/" component={Home}/>
+        <Route exact path="/detail/:id" component={Detail}/>
+        <Route exact path="/write" component={Write}/>
+        <Route exact path="/edit/:id" component={Edit}/>
+      </Switch>
+    </Container>
+  )
 }
+
+const Container = styled.div`
+
+`;
 
 export default App;
