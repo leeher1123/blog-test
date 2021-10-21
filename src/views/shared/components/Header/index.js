@@ -3,6 +3,7 @@ import styled from "styled-components";
 import {Link} from "react-router-dom";
 import {useSelector} from "react-redux";
 import {SiBloglovin} from "react-icons/si";
+import SignOut from "../../../user/components/SignOut";
 
 const Header = () => {
 
@@ -21,6 +22,7 @@ const Header = () => {
             <MemberArea>
               <Icon><SiBloglovin/></Icon>
               <span>{userId} 님의 블로그</span>
+              <SignOut/>
             </MemberArea> :
             <SignArea>
               <Link to="/login">Login</Link>
@@ -59,12 +61,12 @@ const SignArea = styled.div`
   justify-content: flex-end;
   font-size: 18px;
   text-transform: uppercase;
+  transition: .2s;
   a {
     padding: 0 30px;
     color: #333;
-
     &:hover {
-      color: #767676;
+      color: #18f;
     }
   }
 `;
