@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import styled from "styled-components";
 import {GlobalStyle} from "./style/GlobalStyle";
 import Header from "./views/shared/components/Header";
@@ -7,18 +7,25 @@ import Home from "./pages/Blog/Home";
 import Write from "./pages/Blog/Write";
 import Detail from "./pages/Blog/Detail";
 import Edit from "./pages/Blog/Edit";
+import Login from "./pages/Sign/Login";
+import Join from "./pages/Sign/Join";
+import AuthProvider from "./views/user/containers/AuthProvider";
 
 const App = () => {
   return (
     <Container>
-      <GlobalStyle/>
-      <Header/>
-      <Switch>
-        <Route exact path="/" component={Home}/>
-        <Route exact path="/detail/:id" component={Detail}/>
-        <Route exact path="/write" component={Write}/>
-        <Route exact path="/edit/:id" component={Edit}/>
-      </Switch>
+      <AuthProvider>
+        <GlobalStyle/>
+        <Header/>
+        <Switch>
+          <Route exact path="/" component={Home}/>
+          <Route exact path="/detail/:id" component={Detail}/>
+          <Route exact path="/write" component={Write}/>
+          <Route exact path="/edit/:id" component={Edit}/>
+          <Route exact path="/login" component={Login}/>
+          <Route exact path="/join" component={Join}/>
+        </Switch>
+      </AuthProvider>
     </Container>
   )
 }
