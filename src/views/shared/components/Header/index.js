@@ -3,7 +3,7 @@ import styled from "styled-components";
 import {Link} from "react-router-dom";
 import {useSelector} from "react-redux";
 import {SiBloglovin} from "react-icons/si";
-import SignOut from "../../../user/components/SignOut";
+import SignOut from "../../../user/containers/SignOut";
 
 const Header = () => {
 
