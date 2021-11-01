@@ -50,6 +50,10 @@ const Write = styled(Link)`
   &:hover {
     background: #18f;
   }
+  ${media.sm(css`
+    right: 30px;
+    bottom: 50px;
+  `)}
 `;
 
 export default BlogList;

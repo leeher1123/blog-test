@@ -55,6 +55,9 @@ const DetailContainer = () => {
 
 const Container = styled.div`
   padding: 50px 15px 0;
+  ${media.sm(css`
+    padding-top: 20px;
+  `)}
 `;
 
 const ActionButtons = styled.div`
