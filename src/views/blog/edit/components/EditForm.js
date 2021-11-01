@@ -17,6 +17,7 @@ const EditForm = ({ blog, editBlog }) => {
 
 const Container = styled.div`
   padding-top: 50px;
+  margin: 0 12px;
 `;
 
 export default EditForm;

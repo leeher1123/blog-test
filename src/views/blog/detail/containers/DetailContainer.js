@@ -4,6 +4,7 @@ import {deleteDocument, getDocument} from "../../../../firebase/query";
 import {Link, useHistory, useParams} from 'react-router-dom';
 import {ContentContainer} from "../../../../style/Layout.Styled";
 import {useSelector} from "react-redux";
+import {media} from "../../../../lib/styled";
 
 const DetailContainer = () => {
 
@@ -53,13 +54,16 @@ const DetailContainer = () => {
 }
 
 const Container = styled.div`
-  padding-top: 50px;
+  padding: 50px 15px 0;
 `;
 
 const ActionButtons = styled.div`
   display: flex;
   justify-content: flex-end;
   margin-bottom: 30px;
+  ${media.sm(css`
+    justify-content: center;
+  `)}
 `;
 
 const buttonStyle = css`
@@ -79,7 +83,6 @@ const ButtonEdit = styled(Link)`
   ${buttonStyle};
   margin-right: 10px;
   background: #18f;
-
   &:hover {
     background: #0981fc;
   }
@@ -121,7 +124,15 @@ const Desc = styled.div`
     white-space: pre-wrap;
     border: 1px solid #ddd;
     padding: 10px;
+    ${media.md(css`
+      width: 100%;
+      margin: 20px 0 50px;
+  `)};
   }
+  ${media.md(css`
+    display: block;
+    margin: 0 30px;
+  `)};
 `;
 
 const ContentUrl = styled.div`
@@ -131,6 +142,9 @@ const ContentUrl = styled.div`
     width: 100%;
     object-fit: cover;
   }
+  ${media.md(css`
+    width: 100%;
+  `)};
 `;
 
 export default DetailContainer;

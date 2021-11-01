@@ -1,9 +1,10 @@
 import React from "react";
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 import {Link} from "react-router-dom";
 import {useSelector} from "react-redux";
 import {SiBloglovin} from "react-icons/si";
 import SignOut from "../../../user/containers/SignOut";
+import {media} from "../../../../lib/styled";
 
 const Header = () => {
 
@@ -50,6 +51,11 @@ const Logo = styled(Link)`
   cursor: pointer;
   color: #333;
   font-weight: bold;
+  ${media.sm(css`
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 20px;
+  `)}
 `;
 
 const BottomHeader = styled.div`
@@ -65,6 +71,7 @@ const SignArea = styled.div`
   a {
     padding: 0 30px;
     color: #333;
+    
     &:hover {
       color: #18f;
     }

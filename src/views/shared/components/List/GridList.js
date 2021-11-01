@@ -1,14 +1,15 @@
 import React from "react";
-import styled from "styled-components";
+import styled, {css} from "styled-components";
+import {media} from "../../../../lib/styled";
 
-const GridList = ({ children, data }) => {
+const GridList = ({children, data}) => {
   return (
     <Container>
       <Row>
         {
           data.map((item, index) => (
             <Col key={item.id || index}>
-              { children(item, index) }
+              {children(item, index)}
             </Col>
           ))
         }
@@ -18,7 +19,7 @@ const GridList = ({ children, data }) => {
 }
 
 const Container = styled.div`
-
+  padding: 0 12px;
 `;
 
 const Row = styled.div`
@@ -29,7 +30,13 @@ const Row = styled.div`
 
 const Col = styled.div`
   width: 33.3333%;
-  padding: 15px 15px;
+  padding: 15px;
+  ${media.md(css`
+    width: 50%;
+  `)};
+  ${media.sm(css`
+    width: 100%;
+  `)}
 `;
 
 export default GridList;

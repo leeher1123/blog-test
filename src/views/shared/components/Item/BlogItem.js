@@ -37,9 +37,14 @@ const Container = styled(Link)`
 `;
 
 const Thumb = styled.div`
+  padding-top: 60%;
+  position: relative;
   img {
     width: 100%;
-    height: 170px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
     object-fit: cover;
   }
 `;
@@ -52,6 +57,10 @@ const Desc = styled.div`
     color: #333;
   }
   p {
+    max-width: 275px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
     font-size: 15px;
     color: #767676;
     line-height: 1.6;

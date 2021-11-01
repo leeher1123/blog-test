@@ -1,10 +1,11 @@
 import React from "react";
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 import GridList from "../../../shared/components/List/GridList";
 import BlogItem from "../../../shared/components/Item/BlogItem";
 import {ContentContainer} from "../../../../style/Layout.Styled";
 import {FiPlus} from "react-icons/fi";
 import {Link} from "react-router-dom";
+import {media} from "../../../../lib/styled";
 
 const BlogList = ({ blogData }) => {
   return (
@@ -23,6 +24,12 @@ const BlogList = ({ blogData }) => {
 
 const Container = styled.div`
   padding-top: 50px;
+  ${media.md(css`
+    margin: 0 20px;
+  `)};
+  ${media.sm(css`
+    margin: 0 20px;
+  `)}
 `;
 
 const Write = styled(Link)`
