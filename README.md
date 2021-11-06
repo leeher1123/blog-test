@@ -1,4 +1,4 @@
-### Unsplash Clone
+### Blog Clone
 
 ## Stack
 - React
