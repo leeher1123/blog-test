@@ -1,4 +1,4 @@
-### Blog Clone
+### Jimin Blog
 
 ## Stack
 - React
